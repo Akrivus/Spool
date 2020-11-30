@@ -146,7 +146,7 @@ namespace Spool
 
         protected FileDialog FileDialog(FileDialog dialog, string file)
         {
-            dialog.FileName = FilePath != null ? Path.GetFileName(Path.ChangeExtension(FilePath, file)) : string.Format("New Document{0}", file);
+            dialog.FileName = FilePath != null ? Path.GetFileName(Path.ChangeExtension(FilePath, file)) : string.Format("{0}{1}", DialogTree.Nodes[0].Tag, file);
             dialog.Filter = string.Format("Dialog files (*{0})|*{0}", file);
             return dialog;
         }
